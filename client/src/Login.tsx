@@ -9,8 +9,8 @@ const Login = () => {
       username: 'admin',
       password: 'pass',
     })
-    .then((result)=> {
-      console.log({result})
+    .then((result) => {
+      // console.log({result})
     })
     .catch((error) => {
       console.error(error.message);
