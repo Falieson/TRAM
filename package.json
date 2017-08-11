@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-webpack-meteor",
+  "name": "typescript-react-asteroid-meteor",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juliancwirko/react-redux-webpack-meteor.git"
+    "url": "git+https://github.com/falieson/typescript-react-asteroid-meteor.git"
   },
   "author": "Julian Ćwirko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juliancwirko/react-redux-webpack-meteor/issues"
+    "url": "https://github.com/falieson/typescript-react-asteroid-meteor/issues"
   },
-  "homepage": "https://github.com/juliancwirko/react-redux-webpack-meteor#readme",
+  "homepage": "https://github.com/falieson/typescript-react-asteroid-meteor#readme",
   "dependencies": {
     "concurrently": "^3.1.0"
   }
