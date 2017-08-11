@@ -21,6 +21,7 @@
     "node_modules",
     "build",
     "config",
+    "coverage",
     "scripts",
     "acceptance-tests",
     "webpack",

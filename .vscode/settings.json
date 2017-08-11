@@ -1,0 +1,10 @@
+{
+  "eslint.enable": false,
+  "tslint.enable": false,
+  "files.exclude": {
+    "**/client": true,
+    "**/server": true,
+    "**/node_modules": true,
+    "**/.DS_Store": true
+  }
+}

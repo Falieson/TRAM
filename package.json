@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "concurrently \"cd server && meteor npm install\" \"cd client && npm install\"",
-    "start": "concurrently \"cd server && meteor -p 9000\" \"cd client && npm start\""
+    "start": "concurrently \"cd server && meteor -p 9000\" \"cd client && npm start\"",
+    "precommit": "cd client && npm run lint && npm run type && npm run test:silent"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/falieson/typescript-react-asteroid-meteor#readme",
   "dependencies": {
-    "concurrently": "^3.1.0"
+    "concurrently": "^3.1.0",
+    "husky": "^0.14.3"
   }
 }
