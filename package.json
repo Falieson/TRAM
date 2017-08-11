@@ -1,25 +1,34 @@
 {
   "name": "typescript-react-asteroid-meteor",
-  "version": "1.0.0",
   "description": "",
+  "version": "1.0.0",
+  "author": "Florian Mettetal <florianmettetal.developer@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/falieson/typescript-react-asteroid-meteor#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "scripts": {
+    "commit": "git-cz",
+    "commit:noverify": "git-cz --no-verify",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "concurrently \"cd server && meteor npm install\" \"cd client && npm install\"",
     "start": "concurrently \"cd server && meteor -p 9000\" \"cd client && npm start\"",
     "precommit": "cd client && npm run lint && npm run type && npm run test:silent"
+  },
+  "dependencies": {
+    "concurrently": "^3.1.0"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "2.0.0",
+    "husky": "^0.14.3"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/falieson/typescript-react-asteroid-meteor.git"
   },
-  "author": "Julian Ćwirko",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/falieson/typescript-react-asteroid-meteor/issues"
-  },
-  "homepage": "https://github.com/falieson/typescript-react-asteroid-meteor#readme",
-  "dependencies": {
-    "concurrently": "^3.1.0",
-    "husky": "^0.14.3"
   }
 }
