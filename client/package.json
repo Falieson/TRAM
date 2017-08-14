@@ -20,6 +20,7 @@
     "dotenv": "4.0.0",
     "fs-extra": "3.0.1",
     "history": "4.6.3",
+    "kea": "0.22.1",
     "object-assign": "4.1.1",
     "promise": "7.1.1",
     "react": "15.5.4",
@@ -27,6 +28,8 @@
     "react-redux": "5.0.6",
     "react-router-dom": "4.1.2",
     "react-router-redux": "5.0.0-alpha.6",
+    "redux-saga": "0.15.6",
+    "reselect": "3.0.1",
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {

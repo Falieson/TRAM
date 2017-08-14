@@ -17,6 +17,15 @@
 💊  revert:   Reverts a previous commit
 ```
 
+### Chore vs Feature (Installing Packages)
+
+```text
+🔩  Doesn't modify src or test files?
+🌟  A new feature?
+```
+
+So installing Husky is a chore what about installing, configuring, and demoing kea? It's a feature because some of the src code is changed (the demo). If it helps, think of `/client` features as "big changes (primarily for React)" like installing and proving Redux. Alternatively, installing husky or commitizen are chores and don't have an effect on the src code (beyond the package.json).
+
 ## Scope / Topic (Epic)
 
 ```text

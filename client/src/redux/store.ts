@@ -1,22 +1,38 @@
-import { routerMiddleware, routerReducer } from 'react-router-redux'
-import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { keaReducer, keaSaga } from 'kea' 
+import { routerMiddleware as createRouterMiddleware, routerReducer } from 'react-router-redux'
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import createSagaMiddleware, { END } from 'redux-saga'
 
 import { RootReducer, RouterHistory } from './'
+const finalReducer = combineReducers({
+  router: routerReducer,
+  scenes: keaReducer('scenes'),
+  ...RootReducer,    
+})
 
-// Build the middleware for intercepting and dispatching navigation actions
-const middleware = routerMiddleware(RouterHistory)
+function configureStore(initialState: {}) {
+  const sagaMiddleware = createSagaMiddleware()
+  const routerMiddleware = createRouterMiddleware(RouterHistory)
 
-// tslint:disable-next-line no-string-literal
-const enhancedStore = window['devToolsExtension'] ? window['devToolsExtension']()(createStore) : createStore;
+  // tslint:disable-next-line no-string-literal
+  const enhancedStore = window['devToolsExtension'] ? window['devToolsExtension']()(createStore) : createStore;
+  const store = enhancedStore(
+    finalReducer,
+    initialState,
+    compose(
+      applyMiddleware(
+        sagaMiddleware,
+        routerMiddleware
+      )
+    )
+  )
 
-// Add the reducer to your store on the `router` key
-// Also apply our middleware for navigating
-const store = enhancedStore(
-  combineReducers({
-    ...RootReducer,
-    router: routerReducer
-  }),
-  applyMiddleware(middleware)
-)
+  store.runSaga = sagaMiddleware.run
+  store.close = () => store.dispatch(END)
+  return store
+}
 
-export default store
+const finalStore = configureStore(window.__INITIAL_STATE__)
+finalStore.runSaga(keaSaga)
+
+export default finalStore
