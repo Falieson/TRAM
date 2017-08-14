@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { connect, Provider } from 'react-redux'
-import { BrowserRouter, Link, Route } from 'react-router-dom'
-import { combineReducers, createStore, Dispatch } from 'redux'
-import './App.css';
+import { connect } from 'react-redux'
+import { Link, Route } from 'react-router-dom'
+import { Dispatch } from 'redux'
 
+import ReduxRouter from '../components/ReduxRouter'
 import About from './About';
+import './App.css';
 import Login from './Login';
 
 const logo = require('./react_logo.svg'); // tslint:disable-line no-var-requires
 
-// REDUX STUFF
+interface IMeta {
+  connected: boolean,
+  status: string,
+}
 interface IProps {
   meta: IMeta,
   dispatch: Dispatch<{}>,
@@ -42,32 +46,6 @@ const mapStoreToReduxDemo = store => {
 }
 const ConnectedReduxDemo = connect(mapStoreToReduxDemo)(ReduxDemo)
 
-interface IMeta {
-  connected: boolean,
-  status: string,
-}
-const metaReducer = (state = {
-  connected: false,
-  status: 'disconnected',
-},                   action): IMeta => {
-  switch (action.type) {
-    case 'CONNECT':
-      return {
-        connected: true,
-        status: 'connected',
-      }
-    default:
-      return state
-  }
-}
-const rootReducer = combineReducers({
-  meta: metaReducer
-})
-
-// tslint:disable-next-line no-string-literal
-const enhancer = window['devToolsExtension'] ? window['devToolsExtension']()(createStore) : createStore;
-const rootStore = enhancer(rootReducer) // , initialState);
-
 class App extends React.Component<{}, {}> {
   render() {
     const Navigation = () => (
@@ -81,7 +59,7 @@ class App extends React.Component<{}, {}> {
 
     return (
       <div className='App'>
-        <BrowserRouter>
+        <ReduxRouter>
           <div>
 
             <div className='App-header'>
@@ -95,21 +73,21 @@ class App extends React.Component<{}, {}> {
             <div className='App-intro'>
               <div className='react-router'>
                 <Route exact={true} path='/' component={Login}/>
-                <Route exact={true} path='/about' component={About}/>
+                <Route path='/about' component={About}/>
               </div>
             </div>   
 
           </div>
-        </BrowserRouter>
+        </ReduxRouter>
       </div>
     );
   }
 }
 
-const ReduxApp = props => (
-  <Provider store={rootStore}>
-    <App {...props} />
-  </Provider>
-)
+// const ReduxApp = props => (
+//   <Provider store={rootStore}>
+//     <App {...props} />
+//   </Provider>
+// )
 
-export default ReduxApp;
+export default App;
