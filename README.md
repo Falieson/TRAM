@@ -6,6 +6,46 @@ Made with asteroid (ddp), create-react-app, typescript, react, and meteor
 
 ------
 
+## Contributing
+
+Before contributing at least read the Commitizen_Semantics.md documentation.
+
+### RTFM
+
+```text
+.
+├── /docs/                                      # Documentation for contributing to the repo
+    └── /Commitizen_Semantics.md                # The terms used to describe contribution lingo
+└── /client
+    └── /docs/                                  # Client development documentation
+        ├── /Asteroid_juliancwirko_README.md    #
+        ├── /Chrome_DevelopmentProfile.md       #
+        ├── /CreateReactApp_README.md           #
+        ├── /React_Modular_Component_Design.md  #
+        ├── /ReactUnitTesting_EnzymeJest.md     #
+        └── /TSLint_README.md                   #
+```
+
+### Commitizen
+
+This repository uses 'commitizen', start a commit with
+
+```bash
+$ npm run commit
+npm run git-cz
+```
+
+#### Precommit Hook
+
+Before a commit is saved, the precommit script will run, for example: `"precommit": "npm run test"` which will run the test script.
+
+You can skip the precommit hook from running by passing `--no-verify` to commit like :
+
+```bash
+$ npm run commit --no-verify # like git commit --no-verify
+npm run git-cz --no-verify
+```
+
 ## Client (Node) & Server (Meteor) Architecture
 
 This application is architected so the Frontend operates completely independently from the backend.
@@ -88,23 +128,3 @@ the INIT commit is a clone of [juliancwirko/react-redux-webpack-meteor](https://
 - [ ] local npm modules for large scale ui development
 - [ ] meteor (/server) testing w/ Chimp
 - [ ] Jest unit testing w/ snapshots
-
-## Contributing
-
-This repository uses 'commitizen', start a commit with
-
-```bash
-$ npm run commit
-npm run git-cz
-```
-
-### Precommit Hook
-
-Before a commit is saved, the precommit script will run, for example: `"precommit": "npm run test"` which will run the test script.
-
-You can skip the precommit hook from running by passing `--no-verify` to commit like :
-
-```bash
-$ npm run commit --no-verify # like git commit --no-verify
-npm run git-cz --no-verify
-```

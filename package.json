@@ -5,11 +5,6 @@
   "author": "Florian Mettetal <florianmettetal.developer@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/falieson/typescript-react-asteroid-meteor#readme",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "scripts": {
     "commit": "git-cz",
     "commit:noverify": "git-cz --no-verify",
@@ -17,11 +12,73 @@
     "start": "concurrently \"cd server && meteor -p 9000\" \"cd client && npm start\"",
     "precommit": "cd client && npm run lint && npm run type && npm run test:silent"
   },
+  "config": {
+    "cz-emoji": {
+      "types":[
+        {
+          "name": "feat \t\t🌟  A new feature",
+          "value": ":star2:"
+        },
+        {
+          "name": "fix \t\t🐞  A bug fix",
+          "value": ":beetle:"
+        },
+        {
+          "name": "test \t\t🚓  Testing improved with new or fixed tests",
+          "value": ":police_car:"
+        },
+        {
+          "name": "chore \t🔩  Doesn't modify src or test files",
+          "value": ":nut_and_bolt:"
+        },
+        {
+          "name": "style \t✏️  Doesn't affect the meaning of the code (white-space, semi-colons, etc)",
+          "value": ":pencil2:"
+        },
+        {
+          "name": "docs \t\t📚  Documentation change",
+          "value": ":books:"
+        },
+        {
+          "name": "refactor \t🎨  Neither fixes a bug nor adds a feature",
+          "value": ":art:"
+        },
+        {
+          "name": "perf \t\t💰  Improves performance with this change",
+          "value": ":moneybag:"
+        },
+        {
+          "name": "build \t🚀  Build system config or external dependencies ($compile)",
+          "value": ":rocket:"
+        },
+        {
+          "name": "ci \t\t🚥  CI config files and scripts ($arch)",
+          "value": ":traffic_light:"
+        },
+        {
+          "name": "revert \t💊  Reverts a previous commit",
+          "value": ":pill:"
+        }
+      ],
+      "scopes": [
+        "arch",
+        "compile",
+        "contrib",
+        "core",
+        "data",
+        "ui"
+      ]
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-emoji"
+    }
+  },
   "dependencies": {
     "concurrently": "^3.1.0"
   },
   "devDependencies": {
     "cz-conventional-changelog": "2.0.0",
+    "cz-emoji": "0.2.0",
     "husky": "^0.14.3"
   },
   "repository": {
