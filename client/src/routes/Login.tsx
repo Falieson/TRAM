@@ -1,5 +1,5 @@
 import * as React from 'react';
-import asteroid from './config/asteroid';
+import asteroid from '../config/asteroid';
 
 const Login = () => {
   const handleLogin = (e: React.FormEvent<HTMLFormElement>): void => {

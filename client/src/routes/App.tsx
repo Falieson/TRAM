@@ -3,7 +3,7 @@ import './App.css';
 
 import Login from './Login';
 
-const logo = require('./logo.svg'); // tslint:disable-line no-var-requires
+const logo = require('./react_logo.svg'); // tslint:disable-line no-var-requires
 
 class App extends React.Component {
   render() {
