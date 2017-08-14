@@ -61,12 +61,12 @@
         }
       ],
       "scopes": [
-        "arch",
-        "compile",
-        "contrib",
-        "core",
-        "data",
-        "ui"
+        "$arch",
+        "$compile",
+        "$contrib",
+        "$core",
+        "$data",
+        "$ui"
       ]
     },
     "commitizen": {
