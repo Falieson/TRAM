@@ -1,2 +1,5 @@
 info
 node_modules
+
+# development
+.trash/
