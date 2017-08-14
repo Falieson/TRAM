@@ -15,7 +15,9 @@ Before contributing at least read the Commitizen_Semantics.md documentation.
 ```text
 .
 ├── /docs/                                      # Documentation for contributing to the repo
-    └── /Commitizen_Semantics.md                # The terms used to describe contribution lingo
+    └── /CLI_Config.md                          # Setting up CLI (git, npm, bash, brew, etc.)
+    └── /Commitizen_Semantics.md                # Commitizen (contribution) specific terminology
+    └── /Semantics.md                           # General terminology for the project/repo
 └── /client
     └── /docs/                                  # Client development documentation
         ├── /Asteroid_juliancwirko_README.md    #
