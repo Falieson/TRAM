@@ -121,12 +121,12 @@ the INIT commit is a clone of [juliancwirko/react-redux-webpack-meteor](https://
 - [x] tslint config'd
 - [x] react-router
 - [x] redux
+- [x] react-router-redux
+- [x] Kea Redux
 
 ### Coming Soon
 
-- [ ] react-router-redux
 - [ ] tasklist module w/ unit testing
-- [ ] Kea Redux
 - [ ] local npm modules for large scale ui development
 - [ ] meteor (/server) testing w/ Chimp
 - [ ] Jest unit testing w/ snapshots
