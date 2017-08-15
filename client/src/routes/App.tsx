@@ -16,6 +16,7 @@ interface IMeta {
 }
 interface IProps {
   meta: IMeta,
+  user: {username: string},
   dispatch: Dispatch<{}>,
 }
 
@@ -29,19 +30,20 @@ class ReduxDemo extends React.Component<IProps, {}> {
   }
   
   render() {
-    const {meta} = this.props
+    const {meta, user} = this.props
     return  (
       <div>
+        {!!user && !!user.username ? (<h3>Logged in as: {user.username}</h3>) : (<h2>Log In!</h2>)}
         <h3>Redux Connected: {meta.connected.toString()}</h3>
       </div>
     )
   }
 }
 const mapStoreToReduxDemo = store => {
-  const {meta} = store
+  const { meta, user} = store
 
   return {
-    meta
+    meta, user
   }
 }
 const ConnectedReduxDemo = connect(mapStoreToReduxDemo)(ReduxDemo)
@@ -83,11 +85,5 @@ class App extends React.Component<{}, {}> {
     );
   }
 }
-
-// const ReduxApp = props => (
-//   <Provider store={rootStore}>
-//     <App {...props} />
-//   </Provider>
-// )
 
 export default App;

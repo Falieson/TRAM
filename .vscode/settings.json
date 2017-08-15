@@ -2,8 +2,8 @@
   "eslint.enable": false,
   "tslint.enable": false,
   "files.exclude": {
-    "**/client": true,
-    "**/server": true,
+    "**/client": false,
+    "**/server": false,
     "**/node_modules": true,
     "**/.DS_Store": true
   }

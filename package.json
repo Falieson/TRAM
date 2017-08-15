@@ -8,13 +8,13 @@
   "scripts": {
     "commit": "git-cz",
     "commit:noverify": "git-cz --no-verify",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cd client && npm run test",
     "start": "concurrently \"cd server && meteor -p 9000\" \"cd client && npm start\"",
     "precommit": "cd client && npm run lint && npm run type && npm run test:silent"
   },
   "config": {
     "cz-emoji": {
-      "types":[
+      "types": [
         {
           "name": "feat \t\t🌟  A new feature",
           "value": ":star2:"
