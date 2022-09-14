@@ -33,7 +33,7 @@ So installing Husky is a chore what about installing, configuring, and demoing k
 ? Denote the scope of this change ($location, $browser, $compile, etc.):
 ```
 
-A scope shouldn't be depnendent on a single library but describe the function of that library, so instead of "Meteor" or "Server" as a scope the correct scope is **"DATA"** because thats the functional piece the Meteor (/server directory) Server operates. But Meteor maybe removed one day. Also, one day `/server` maybe isolated in its own repo. Contributions can continue to be marked as `$data`  independent of Meteor or `/server` being changed.
+A scope shouldn't be dependent on a single library but describe the function of that library, so instead of "Meteor" or "Server" as a scope the correct scope is **"DATA"** because thats the functional piece the Meteor (/server directory) Server operates. But Meteor maybe removed one day. Also, one day `/server` maybe isolated in its own repo. Contributions can continue to be marked as `$data`  independent of Meteor or `/server` being changed.
 
 ```diagram
 .
